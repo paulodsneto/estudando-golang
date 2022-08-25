@@ -4,7 +4,11 @@ import (
 	"fmt"
 	"net/http"
 	"os"
+	"time"
 )
+
+const monitoramentos = 3
+const delay = 5
 
 func main() {
 	exibeIntroducao()
@@ -50,11 +54,18 @@ func exibeMenu() {
 
 func iniciarMonitoramento() {
 	fmt.Println("Monitorando...")
-	var sites [4]string
-	sites[0] = "https://random-status-code.herokuapp.com/"
-	sites[1] = "https://alura.com.br"
-	sites[2] = "https://google.com"
-	site := "https://random-status-code.herokuapp.com/"
+	sites := []string{"https://random-status-code.herokuapp.com/", "https://alura.com.br", "https://google.com"}
+
+	for i := 0; i < monitoramentos; i++ {
+		for i, site := range sites {
+			fmt.Println("Testando site", i, ":", site)
+			testaSite(site)
+		}
+		time.Sleep(delay * time.Second)
+	}
+}
+
+func testaSite(site string) {
 	resp, _ := http.Get(site)
 
 	if resp.StatusCode == 200 {
@@ -62,4 +73,5 @@ func iniciarMonitoramento() {
 	} else {
 		fmt.Println("Site:", site, "está com problemas. Status Code:", resp.StatusCode)
 	}
+
 }
