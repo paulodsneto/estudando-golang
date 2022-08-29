@@ -1,0 +1,9 @@
+29/08/2022 16:57:53 - https://random-status-code.herokuapp.com/- online:false
+29/08/2022 16:57:54 - https://alura.com.br- online:true
+29/08/2022 16:57:56 - https://google.com- online:true
+29/08/2022 16:58:02 - https://random-status-code.herokuapp.com/- online:true
+29/08/2022 16:58:02 - https://alura.com.br- online:true
+29/08/2022 16:58:03 - https://google.com- online:true
+29/08/2022 16:58:09 - https://random-status-code.herokuapp.com/- online:true
+29/08/2022 16:58:09 - https://alura.com.br- online:true
+29/08/2022 16:58:10 - https://google.com- online:true
